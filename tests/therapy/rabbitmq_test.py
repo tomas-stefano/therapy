@@ -16,7 +16,5 @@ class RabbitMQTest(unittest.TestCase):
 
     def test_should_return_none_when_not_have_library_to_use(self):
         """test should return none when not have library to use"""
-        self.assertEqual(None, queue_without_library.QueueWithoutLibrary.library())
-
-    # def test_should_perform_the_job_by_simple_queue(self):
-    #     """should perform the job by Simple Queue"""
+        self.assertRaises(queue.WithoutQueueLibraryError, queue_without_library.QueueWithoutLibrary.library)
+            

@@ -12,4 +12,11 @@ class Queue(object):
         try:
             return klass.library_to_use
         except:
-            None # TODO: Need to raise something and pass a friendly msg
+            raise WithoutQueueLibraryError("You need to pass a library to use. Example: MyQueue.use(library = RestMQ) -> Or RabbitMQ, ActiveMQ, BeanStalkd")
+
+class WithoutQueueLibraryError(Exception):
+    def __init__(self, text):
+        self.text = text
+    
+    def __str__(self):
+        return repr(self.text)
