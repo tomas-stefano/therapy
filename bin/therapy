@@ -1,0 +1,13 @@
+#!/usr/bin/python
+# -*- coding: utf-8; -*-
+
+import therapy
+
+if __name__ == '__main__':
+  parser = therapy.OptionParser()
+  parser.add_option('-d', '--disk', dest='disk', default='sda')
+  (options, args) = parser.parse_args()
+
+  while True:
+    therapy.Statistics(device=options.device).retrieve()
+    time.sleep(1)
