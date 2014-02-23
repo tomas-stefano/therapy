@@ -9,5 +9,5 @@ if __name__ == '__main__':
   (options, args) = parser.parse_args()
 
   while True:
-    therapy.Statistics(device=options.device).retrieve()
+    therapy.Statistics(disk=options.disk).retrieve()
     time.sleep(1)
