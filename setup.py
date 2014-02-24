@@ -14,7 +14,7 @@ setup(name='therapy',
       keywords='',
       license = "MIT License",
       packages=find_packages('therapy'),
-      package_dir={'': 'therapy',},
+      package_dir={'': 'src',},
       tests_require = ['nose >= 0.11'],
       test_suite = "nose.collector",
       include_package_data=True)
